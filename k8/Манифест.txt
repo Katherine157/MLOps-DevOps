@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+	name: netology-ml
+spec:
+ 	replicas: 2
+ 	strategy:
+		type: RollingUpdate
+	template:
+		containers:
+			name: tomcat
+			image: tomcat:8.5.69
+			ports:
+				-containerPort: 8080
