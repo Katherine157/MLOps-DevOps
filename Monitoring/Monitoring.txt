@@ -1,0 +1,25 @@
+Перечислите алерты, которые настроены в Prometheus alerts.
+
+jenkins_down
+jenkins_high_cpu
+jenkins_high_memory
+high_cpu_load
+high_memory_load
+high_storage_load
+monitor_service_down
+
+Перечислите количество dashboards в Grafana, для какого ПО они?
+
+4шт
+Для Docker, для Prometheus и Nginx
+
+Метрики на дашборде:
+CPU Load/Cores
+Memory Load
+Used Memory
+Storage Load
+Used Storage
+Running Containers
+System Load
+I/O usage
+Container CPU Usage/Memory Usage/Cached Memory Usage/Network Input/Network Output
