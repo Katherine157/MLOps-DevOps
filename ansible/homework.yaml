@@ -1,0 +1,41 @@
+---
+- name: netology-ml
+  hosts: all
+  become: yes
+
+  vars:
+    int_net_tools: net_tools
+    int_git: git
+    int_tree: tree
+    int_htop: htop
+    int_mc: mc
+    int_vim: vim
+    source_file: ./test.txt
+    destination: /home/text/txt
+
+  tasks:
+  - name: Ping my servers
+    ping:
+
+  - name: Copy Files
+    copy: src={{ source_file }} dest = {{ destination }} mode = 0777
+
+  - name: Install Software
+    yum: name = {{ int_net_tools }} state = latest
+    yum: name = {{ int_git }} state = latest
+    yum: name = {{ int_tree }} state = latest
+    yum: name = {{ int_htop }} state = latest
+    yum: name = {{ int_mc }} state = latest
+    yum: name = {{ int_vim }} state = latest
+
+  - name: Update Hosts
+    updates:
+      - path: /opt/ansible/hosts
+        value: client1 
+    register: update
+
+  - name: Group create
+    debug: msg = "Create user {{ item }}"
+    loop:
+       - "devops_1"
+       - "test_1"
