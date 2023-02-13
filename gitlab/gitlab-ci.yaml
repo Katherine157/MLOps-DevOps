@@ -1,0 +1,15 @@
+stages:
+ - build
+ - test
+ 
+building:
+ stage: build
+ script: 
+  - mkdir build
+  - mkdir info.txt
+  - nano info.txt
+  - "Testing"
+   
+ stage: test
+ script:
+  - cat info.txt 
