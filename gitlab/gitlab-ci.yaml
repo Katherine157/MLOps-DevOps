@@ -6,7 +6,7 @@ building:
  stage: build
  script: 
   - mkdir build
-  - mkdir info.txt
+  - touch info.txt
   - nano info.txt
   - "Testing"
    
