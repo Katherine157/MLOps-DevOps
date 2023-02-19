@@ -1,1 +1,4 @@
-“Hello Netology”
+#!/bin/bash
+
+echo  “Hello Netology”
+
